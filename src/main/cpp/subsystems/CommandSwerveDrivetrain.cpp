@@ -83,7 +83,7 @@ void CommandSwerveDrivetrain::configureAutoBuilder(){
             // PID constants for rotation
             pathplanner::PIDConstants{8.0, 0.0, 0.0}
         ),
-        std::move(config),
+        std::move(pathplannerConstants::config),
         // Assume the path needs to be flipped for Red vs Blue, this is normally the case
         [] {
             auto const alliance = frc::DriverStation::GetAlliance().value_or(frc::DriverStation::Alliance::kBlue);

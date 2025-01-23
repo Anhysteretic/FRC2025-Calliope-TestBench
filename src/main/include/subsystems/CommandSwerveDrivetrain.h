@@ -156,6 +156,8 @@ public:
         if (utils::IsSimulation()) {
             StartSimThread();
         }
+
+        configureAutoBuilder();
     }
 
     /**
@@ -182,6 +184,8 @@ public:
         if (utils::IsSimulation()) {
             StartSimThread();
         }
+
+        configureAutoBuilder();
     }
 
     /**
@@ -295,7 +299,7 @@ frc2::CommandPtr getGoToScoreCommand(){
     return pathplanner::AutoBuilder::pathfindToPose(
     pathplannerConstants::target,
     pathplanner::PathConstraints(
-        0.15_mps, 0.3_mps_sq,
+        2_mps, 2.5_mps_sq,
         540_deg_per_s, 720_deg_per_s_sq),
     0.0_mps);
 }
